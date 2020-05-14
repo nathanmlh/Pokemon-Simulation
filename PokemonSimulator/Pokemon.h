@@ -27,6 +27,36 @@ public:
  	 */
 	std::wstring GetName() { return mName; }
 
+	/** Sets the maximum health points this pokemon has
+	 * \param hp The health points we want to set it to
+	 */
+	void SetMaxHealthPoints(int hp) { mMaxHealthPoints = hp; }
+
+	/** Sets the attack stat of this pokemon
+	 * \param attack The attack stat we want to set
+	 */
+	void SetAttack(int attack) { mAttack = attack; }
+
+	/** Sets the defense stat of this pokemon
+	 * \param defense The defense stat we want to set
+	 */
+	void SetDefense(int defense) { mDefense = defense; }
+
+	/** Sets the special attack stat of this pokemon
+	 * \param spAttack The defense stat we want to set
+	 */
+	void SetSpecialAttack(int spAttack) { mSpecialAttack = spAttack; }
+
+	/** Sets the special defense stat of this pokemon
+	 * \param spDefense The special defense stat we want to set
+	 */
+	void SetSpecialDefense(int spDefense) { mSpecialDefense = spDefense; }
+
+	/** Sets the speed stat of this pokemon
+	 * \param speed The speed stat we want to set
+	 */
+	void SetSpeed(int speed) { mSpeed = speed; }
+
 	/** Sets the first ability of this pokemon */
 	void AddAbility(std::shared_ptr<CAbility> ability);
 
@@ -34,6 +64,18 @@ public:
 	 * \return If this pokemon is fainted or not
 	 */
 	bool mIsFainted() { return mCurrentHealthPoints > 0; }
+
+	/** Sets all the base stats of a pokemon...meant to be used in the constructor 
+	 * \param hp The health points
+	 * \param atk The attack points
+	 * \param defense The defense points
+	 * \param spAtk The special attack stat
+	 * \param spDef The special defense stat of the pokemon
+	 * \param speed The speed of the pokemon*/
+	void SetBaseStats(int hp, int atk, int defense, int spAtk, int spDef, int speed);
+
+	/** Outputs the current stat of this pokemon. */
+	void OutputStats();
 
 	std::shared_ptr<CAbility> GetRandomAbility() {return mAbilities[rand() % mAbilities.size()]; }
 

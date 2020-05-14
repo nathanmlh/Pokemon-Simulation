@@ -32,3 +32,25 @@ void CPokemon::AddAbility(std::shared_ptr<CAbility> ability)
 		mAbilities.push_back(ability);
 	}
 }
+
+void CPokemon::SetBaseStats(int hp, int atk, int defense, int spAtk, int spDef, int speed)
+{
+	mMaxHealthPoints = hp;
+	mCurrentHealthPoints = mMaxHealthPoints;
+	mAttack = atk;
+	mDefense = defense;
+	mSpecialAttack = spAtk;
+	mSpecialDefense = spDef;
+	mSpeed = speed;
+}
+
+void CPokemon::OutputStats()
+{
+	wcout << "---- " << mName << " stats ----" << endl;
+	cout << "[HP]        : " << mCurrentHealthPoints << "/" << mMaxHealthPoints << endl;
+	cout << "[Attack]    : " << mAttack << endl;
+	cout << "[Defense]   : " << mDefense << endl;
+	cout << "[SpAttack]  : " << mSpecialAttack << endl;
+	cout << "[SpDefense] : " << mSpecialDefense << endl;
+	cout << "[Speed]     : " << mSpeed << endl;
+}

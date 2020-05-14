@@ -47,6 +47,13 @@ public:
 	void TheirTurn();
 
 
+
+
+
+	// Test functions: prints the participants in the battle
+	void PrintParticipants();
+
+
 private:
 
 	/// Your active pokemon

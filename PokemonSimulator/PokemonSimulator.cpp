@@ -5,6 +5,7 @@
  */
 
 #include "Bulbasaur.h" 
+#include "Caterpie.h"
 #include "Battle.h"
 
 
@@ -14,7 +15,8 @@
 int main()
 {
     std::shared_ptr<CBulbasaur> myBulbasaur = std::make_shared<CBulbasaur>(L"Bulby");
+    std::shared_ptr<CCaterpie> enemy = std::make_shared<CCaterpie>(L"enemy1");
 
-    std::wcout << myBulbasaur->GetName();
-    
+    CBattle testBattle(myBulbasaur, enemy);
+    testBattle.PrintParticipants();
 }

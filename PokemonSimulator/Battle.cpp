@@ -58,3 +58,11 @@ void CBattle::TheirTurn()
 {
     wcout << "The enemy " << mEnemyPokemon->GetName() << " used " << mEnemyPokemon->GetRandomAbility()->GetName() << endl;
 }
+
+void CBattle::PrintParticipants()
+{
+    cout << "The participants are: " << endl;
+    wcout << mYourPokemon->GetName() << " and " << mEnemyPokemon->GetName() << endl;
+    mYourPokemon->OutputStats();
+    mEnemyPokemon->OutputStats();
+}
