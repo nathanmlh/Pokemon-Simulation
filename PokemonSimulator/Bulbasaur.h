@@ -11,7 +11,7 @@ public:
     CBulbasaur();
 
     /** Name constructor */
-    CBulbasaur(std::wstring name);
+    CBulbasaur(std::string name);
 
 };
 

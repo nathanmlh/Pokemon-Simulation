@@ -7,6 +7,6 @@ public:
     CCaterpie();
 
     /** Name constructor */
-    CCaterpie(std::wstring name);
+    CCaterpie(std::string name);
 };
 

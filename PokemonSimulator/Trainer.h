@@ -39,6 +39,11 @@ public:
 	 */
 	void AddPokemon(std::shared_ptr<CPokemon> pokemon);
 
+	/** This function gets the starter pokemon of the trainer
+	 * \return The starter pokemon of the trainer
+	 */
+	std::shared_ptr<CPokemon> GetStarter() { return mParty[0]; }
+
 private:
 	
 	/// The name of the trainer

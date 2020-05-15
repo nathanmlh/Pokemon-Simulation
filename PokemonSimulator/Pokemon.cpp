@@ -14,7 +14,7 @@ CPokemon::CPokemon()
 {
 }
 
-CPokemon::CPokemon(std::wstring name)
+CPokemon::CPokemon(std::string name)
 {
 	mName = name;
 }
@@ -47,7 +47,7 @@ void CPokemon::SetBaseStats(int level, int hp, int atk, int defense, int spAtk, 
 
 void CPokemon::OutputStats()
 {
-	wcout << "---- " << mName << " stats ----" << endl;
+	cout << "---- " << mName << " stats ----" << endl;
 	cout << "[Level]     : " << mLevel << endl;
 	cout << "[HP]        : " << mCurrentHealthPoints << "/" << mMaxHealthPoints << endl;
 	cout << "[Attack]    : " << mAttack << endl;

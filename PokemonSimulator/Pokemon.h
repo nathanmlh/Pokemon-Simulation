@@ -12,7 +12,7 @@ public:
 	/** Default constructor */
 	CPokemon();
 
-	CPokemon(std::wstring name);
+	CPokemon(std::string name);
 
 	/** Copy constructor deleted*/
 	CPokemon(const CPokemon&) = delete; 
@@ -20,12 +20,12 @@ public:
 	/** Sets the name of the pokemon 
 	 * \param name The name of the pokmon
 	 */
-	void SetName(std::wstring name) { mName = name; }
+	void SetName(std::string name) { mName = name; }
 
 	/** Gets the name of the pokemon
 	 * \return mName The name of the pokemon
  	 */
-	std::wstring GetName() { return mName; }
+	std::string GetName() { return mName; }
 
 	/** Sets the maximum health points this pokemon has
 	 * \param hp The health points we want to set it to
@@ -90,7 +90,7 @@ private:
 	/***************************************************************/
 
 	/// The name of the pokemon.
-	std::wstring mName;
+	std::string mName;
 
 	/// The level of the pokemon
 	int mLevel = 0;

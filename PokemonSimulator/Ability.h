@@ -48,12 +48,12 @@ public:
 	/** Gets the name of the ability
 	 * \return mName The name of the ability 
 	 */
-	std::wstring GetName() { return mName; }
+	std::string GetName() { return mName; }
 
 	/** Sets the name of the ability...used in constructor 
 	 * \param name The name we want to set of this ability 
 	 */
-	void SetName(std::wstring name) { mName = name; }
+	void SetName(std::string name) { mName = name; }
 
 
 private:
@@ -68,7 +68,7 @@ private:
 	int mPowerPoints = 0;
 
 	/// The name of the ability
-	std::wstring mName;
+	std::string mName;
 
 };
 

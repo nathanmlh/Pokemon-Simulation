@@ -5,6 +5,8 @@
  */
 
 #include "Menu.h"
+#include "Battle.h"
+#include "Caterpie.h"
 
 #include <iostream>
 
@@ -38,16 +40,21 @@ void CMenu::MainLoop()
         {
         case 'P':
         case 'p': {cout << "\n These are your pokemon!\n"; }
+                // Outtputting all pokemon you have in your party
                 mTrainer->OutputPokemon();
-                // TODO: Implement outputting the pokemon you have in your inventory
                 break;
 
         case 'B':
-        case 'b': {cout << "\n Starting a battle!\n"; }
-
-                cout << " You chose to start a battle!\n" << endl;
-                // TODO: Implement starting a battle
-                break;
+        case 'b':
+        {
+            cout << "\n Starting a battle!\n";
+            cout << " You chose to start a battle!\n" << endl;
+            // TODO: Implement starting a battle
+            shared_ptr<CCaterpie> new_caterpie = make_shared<CCaterpie>("enemy1");
+            CBattle newBattle(mTrainer->GetStarter(), new_caterpie);
+            newBattle.PrintParticipants();
+            break;
+        }
 
         case 'X':
         case 'x': {cout << "\n To exit the simulation.\n"; }

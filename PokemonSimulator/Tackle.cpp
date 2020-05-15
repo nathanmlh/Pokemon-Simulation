@@ -2,7 +2,7 @@
 
 CTackle::CTackle()
 {
-	SetName(L"Tackle");
+	SetName("Tackle");
 	SetPower(40);
 	SetAccuracy(100);
 	SetPowerPoints(35);
