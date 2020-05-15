@@ -151,18 +151,21 @@
     <ClCompile Include="Bulbasaur.cpp" />
     <ClCompile Include="Ability.cpp" />
     <ClCompile Include="Caterpie.cpp" />
-    <ClCompile Include="CBattle.cpp" />
+    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Pokemon.cpp" />
-    <ClCompile Include="PokemonSimulator.cpp" />
+    <ClCompile Include="PokemonSimulatorSystem.cpp" />
     <ClCompile Include="Tackle.cpp" />
+    <ClCompile Include="Trainer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ability.h" />
     <ClInclude Include="Battle.h" />
     <ClInclude Include="Bulbasaur.h" />
     <ClInclude Include="Caterpie.h" />
+    <ClInclude Include="Menu.h" />
     <ClInclude Include="Pokemon.h" />
     <ClInclude Include="Tackle.h" />
+    <ClInclude Include="Trainer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

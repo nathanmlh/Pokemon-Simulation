@@ -66,13 +66,14 @@ public:
 	bool mIsFainted() { return mCurrentHealthPoints > 0; }
 
 	/** Sets all the base stats of a pokemon...meant to be used in the constructor 
+	 * \param level The level of this pokemon
 	 * \param hp The health points
 	 * \param atk The attack points
 	 * \param defense The defense points
 	 * \param spAtk The special attack stat
 	 * \param spDef The special defense stat of the pokemon
 	 * \param speed The speed of the pokemon*/
-	void SetBaseStats(int hp, int atk, int defense, int spAtk, int spDef, int speed);
+	void SetBaseStats(int level, int hp, int atk, int defense, int spAtk, int spDef, int speed);
 
 	/** Outputs the current stat of this pokemon. */
 	void OutputStats();
