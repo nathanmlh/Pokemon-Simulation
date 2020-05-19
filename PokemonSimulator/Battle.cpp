@@ -21,12 +21,13 @@ void CBattle::MainLoop()
         mTrainer->IncreaseChoices();
 
         char selection;
-        cout << "\n" << mTrainer->GetChoiceNumber() << ": Battle Menu";
-        cout << "\n----------------";
-        cout << "\n A - Attack";
-        cout << "\n R - Run";
-        cout << "\n X - Exit";
-        cout << "\n Enter selection: ";
+        cout << mTrainer->GetChoiceNumber() << ": Battle Menu" << endl;
+        cout << "----------------" << endl;
+        cout << "A - Attack" << endl;
+        cout << "S - Stats" << endl;
+        cout << "R - Run" << endl;
+        cout << "X - Exit" << endl;
+        cout << "Enter selection: " << endl;
         // read the input
         cin >> selection;
 
@@ -38,8 +39,16 @@ void CBattle::MainLoop()
         case 'a': 
         {
             cout << "\n To attack the enemy pokemon\n";
-            ChooseMove();
+            // Choosing the move
+            int moveIndex = ChooseMove();
+            mActivePokemon->DoDamage(mEnemyPokemon, moveIndex);
             break;
+        }
+
+        case 'S':
+        case 's':
+        {
+            PrintParticipants();
         }
 
         case 'R':
@@ -65,7 +74,7 @@ void CBattle::MainLoop()
     }
 }
 
-void CBattle::ChooseMove()
+int CBattle::ChooseMove()
 {
     vector<shared_ptr<CAbility>> abilities = mActivePokemon->GetAbilities();
 
@@ -88,8 +97,7 @@ void CBattle::ChooseMove()
         // Checking if number you selected is in bounds
         if ((selNum >= 1) && (selNum <= abilities.size()))
         {
-            cout << "You choose: " << abilities[selNum - 1]->GetName();
-            return;
+            return selNum - 1;
         }
         else
         {

@@ -27,6 +27,16 @@ public:
  	 */
 	std::string GetName() { return mName; }
 
+	/** Gets the level of the pokemon
+	 * \return The level of the pokemon
+	 */
+	int GetLevel() { return mLevel; }
+
+	/** Gets the attack rating of this pokemon
+	 * \return The attack rating of this pokemon
+	 */
+	int GetAttack() { return mAttack; }
+
 	/** Sets the maximum health points this pokemon has
 	 * \param hp The health points we want to set it to
 	 */
@@ -64,6 +74,24 @@ public:
 	 * \return If this pokemon is fainted or not
 	 */
 	bool mIsFainted() { return mCurrentHealthPoints > 0; }
+
+	/** Applies damage from the enemy pokemon and the index of the move given
+	 * \param enemyPokemon The enemy pokemon that is doing the damage
+	 * \param idx The index of the move that we are using
+	 */
+	void DoDamage(std::shared_ptr<CPokemon> enemyPokemon, int idx);
+
+	/** Takes the damage given and reduces health points accordingly
+	 * \param damage
+	 */
+	void TakeDamage(int damage) { mCurrentHealthPoints -= damage; }
+
+	/** Calculates the damage that you are about to do to this enemy pokemon
+	 * \param enemyPokemon The enemy pokemon that we are attacking
+	 * \param ability The ability that we are using
+	 * \return The damage amount
+	 */
+	int CalculateDamage(std::shared_ptr<CPokemon> enemyPokemon, std::shared_ptr<CAbility> ability);
 
 	/** Sets all the base stats of a pokemon...meant to be used in the constructor 
 	 * \param level The level of this pokemon

@@ -42,8 +42,10 @@ public:
 	/** The main loop of the battle. This controls everything else in the battle. */
 	void MainLoop();
 
-	/** This function runs when you have to choose a move to attack with */
-	void ChooseMove();
+	/** This function returns the index of the move that you choose
+	 * \return The index of the move that you choose
+	 */
+	int ChooseMove();
 
 	/** This function runs when it is their turn */
 	void TheirTurn();

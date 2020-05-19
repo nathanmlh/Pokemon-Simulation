@@ -33,6 +33,25 @@ void CPokemon::AddAbility(std::shared_ptr<CAbility> ability)
 	}
 }
 
+void CPokemon::DoDamage(std::shared_ptr<CPokemon> enemyPokemon, int idx)
+{
+	int damage = CalculateDamage(enemyPokemon, mAbilities[idx]);
+	enemyPokemon->TakeDamage(damage);
+	cout << "Your " << mName << " did " << damage << " damage!" << endl;
+	
+}
+
+int CPokemon::CalculateDamage(std::shared_ptr<CPokemon> enemyPokemon, std::shared_ptr<CAbility> ability)
+{
+	// Modifier = tagets * weather * badge * critical * random * stab * type * burn * other
+	int modifier = 1;
+	int damage = ((((2 * this->GetLevel() / 5) + 2) *
+		ability->GetPower() * this->GetAttack() / enemyPokemon->mDefense) / 50 + 2)
+		* modifier;
+
+	return damage;
+}
+
 void CPokemon::SetBaseStats(int level, int hp, int atk, int defense, int spAtk, int spDef, int speed)
 {
 	mLevel = level;
