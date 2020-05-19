@@ -60,6 +60,8 @@ void CMenu::MainLoop()
 
         case 'X':
         case 'x': {cout << "\n To exit the simulation.\n"; }
+                // Displays stats after simulation is over
+                DisplayStats();
                 exit(0);
 
                 // other than A, M, D and X...
@@ -72,4 +74,13 @@ void CMenu::MainLoop()
 
         cout << "\n";
     }
+}
+
+void CMenu::DisplayStats()
+{
+    cout << endl;
+    cout << "Stats" << endl;
+    cout << "-------" << endl;
+
+    cout << "Number of player choices: " << mTrainer->GetChoiceNumber() << endl;
 }

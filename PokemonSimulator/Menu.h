@@ -27,6 +27,9 @@ public:
     /** The main loop of the menu: Allows the trainer to select any many option available */
     void MainLoop();
 
+    /** Displays the statistics after the whole simulation is over */
+    void DisplayStats();
+
 private:
 
     /// The main trainer
