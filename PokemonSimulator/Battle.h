@@ -42,8 +42,8 @@ public:
 	/** The main loop of the battle. This controls everything else in the battle. */
 	void MainLoop();
 
-	/** This function runs when it is your turn */
-	void YourTurn();
+	/** This function runs when you have to choose a move to attack with */
+	void ChooseMove();
 
 	/** This function runs when it is their turn */
 	void TheirTurn();
@@ -67,7 +67,7 @@ private:
 	/// The pokemon your active pokemon is battling
 	std::shared_ptr<CPokemon> mEnemyPokemon = nullptr;
 
-
-
+	/// Indicates if it is your turn or their turn (Your turn = 1, their turn = -1)
+	int YourTurnOrTheirTurn = 1;
 };
 

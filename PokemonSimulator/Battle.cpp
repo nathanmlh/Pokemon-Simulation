@@ -35,9 +35,12 @@ void CBattle::MainLoop()
         {
 
         case 'A':
-        case 'a': {cout << "\n To attack the enemy pokemon\n"; }
-                cout << "You chose attack the other pokemon" << endl;
-                break;
+        case 'a': 
+        {
+            cout << "\n To attack the enemy pokemon\n";
+            ChooseMove();
+            break;
+        }
 
         case 'R':
         case 'r': {cout << "\n To run from the battle"; }
@@ -62,8 +65,37 @@ void CBattle::MainLoop()
     }
 }
 
-void CBattle::YourTurn()
+void CBattle::ChooseMove()
 {
+    vector<shared_ptr<CAbility>> abilities = mActivePokemon->GetAbilities();
+
+    while (true)
+    {
+        cout << "Enter a move to choose from: " << endl;
+        // Outputting abilities
+        int counter = 1;
+        for (auto ability : abilities)
+        {
+            cout << counter << ": " << ability->GetName() << " " << ability->GetCurrentPowerPoints()
+                << "/" << ability->GetMaxPowerPoints() << endl;
+            counter++;
+        }
+
+        char selection;
+        cin >> selection;
+
+        int selNum = selection - '0';
+        // Checking if number you selected is in bounds
+        if ((selNum >= 1) && (selNum <= abilities.size()))
+        {
+            cout << "You choose: " << abilities[selNum - 1]->GetName();
+            return;
+        }
+        else
+        {
+            cout << "Please choose one of your moves." << endl;
+        }
+    }
 }
 
 void CBattle::TheirTurn()

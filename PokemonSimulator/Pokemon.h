@@ -78,6 +78,9 @@ public:
 	/** Outputs the current stat of this pokemon. */
 	void OutputStats();
 
+	/** Gets the abilities of this pokemon to use in a battle*/
+	std::vector<std::shared_ptr<CAbility>> GetAbilities() { return mAbilities; };
+
 	std::shared_ptr<CAbility> GetRandomAbility() {return mAbilities[rand() % mAbilities.size()]; }
 
 private:

@@ -1,9 +1,9 @@
 #include "Tackle.h"
 
-CTackle::CTackle()
+CTackle::CTackle() : CAbility()
 {
 	SetName("Tackle");
 	SetPower(40);
 	SetAccuracy(100);
-	SetPowerPoints(35);
+	SetMaxPowerPoints(35);
 }

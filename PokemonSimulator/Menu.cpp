@@ -59,15 +59,15 @@ void CMenu::MainLoop()
         }
 
         case 'X':
-        case 'x': {cout << "\n To exit the simulation.\n"; }
-                // Displays stats after simulation is over
-                DisplayStats();
-                exit(0);
-
-                // other than A, M, D and X...
+        case 'x': 
+        {
+            cout << "\n To exit the simulation.\n";
+            // Displays stats after simulation is over
+            DisplayStats();
+            exit(0);
+        }
 
         default: cout << "\n Invalid selection\n";
-
             // no break in the default case
 
         }
