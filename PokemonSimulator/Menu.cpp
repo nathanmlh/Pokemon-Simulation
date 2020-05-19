@@ -23,21 +23,23 @@ void CMenu::MainLoop()
 
     while (true)
     {
-        char selection;
+        // Increases move number by 1
+        mTrainer->IncreaseChoices();
 
-        cout << "\n Menu";
-        cout << "\n------";
+        char selection;
+        cout << "\n" << mTrainer->GetChoiceNumber() << ": Menu";
+        cout << "\n---------";
         cout << "\n P - See your pokemon";
         cout << "\n B - Battle";
         cout << "\n X - Exit";
         cout << "\n Enter selection: ";
-
         // read the input
         cin >> selection;
 
         switch (selection)
 
         {
+
         case 'P':
         case 'p': {cout << "\n These are your pokemon!\n"; }
                 // Outtputting all pokemon you have in your party
@@ -51,8 +53,8 @@ void CMenu::MainLoop()
             cout << " You chose to start a battle!\n" << endl;
             // TODO: Implement starting a battle
             shared_ptr<CCaterpie> new_caterpie = make_shared<CCaterpie>("enemy1");
-            CBattle newBattle(mTrainer->GetStarter(), new_caterpie);
-            newBattle.PrintParticipants();
+            CBattle newBattle(mTrainer, new_caterpie);
+            newBattle.MainLoop();
             break;
         }
 
